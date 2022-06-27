@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../arquivos-globais/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="login-css/login.css">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <div class="container d-flex align-items-center justify-content-center" id="formulario">
+    <div class="row border rounded-2 p-3">
+      <h3 class="text-center">Bem Vindo!</h3>
+
+      <form class="align-self-center">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Endereço de Email</label>
+          <input type="email" class="form-control" required id="email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Nós não vamos compartilhar o seu email com outras pessoas.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" required class="form-label">Senha</label>
+          <input type="password" class="form-control" required id="senha">
+        </div>
+        <div class="d-flex">
+          <button type="submit" class="btn btn-primary mx-auto" id="botao-login">Login</button>
+
+        </div>
+      </form>
+
+    </div>
+
+    <script src="login-js/login.js"></script>
+</body>
+
+</html>
