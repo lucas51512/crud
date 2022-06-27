@@ -65,6 +65,7 @@ const saveClient = () => {
         }
         createClient(client);
         clearFields();
+        updateTable();
         closeModal();
     }
 }
@@ -95,6 +96,13 @@ const updateTable = () => {
     dbClient.forEach(createRow);
 }
 
+const editDelete = (event) => {
+    if (event.target.type == 'button') {
+        console.log(event.target.id.split('-'));
+        
+    }
+}
+
 updateTable();
 
 //Eventos 
@@ -104,4 +112,8 @@ document.getElementById('cadastrarCliente')
 document.getElementById('modalClose')
     .addEventListener('click', closeModal);
 
-document.getElementById('salvar').addEventListener('click', saveClient);
+document.getElementById('salvar')
+    .addEventListener('click', saveClient);
+
+document.querySelector('#tableClient>tbody')
+    .addEventListener('click', editDelete)
