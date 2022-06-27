@@ -1,3 +1,11 @@
 #botoes{
     height: 100vh;
 }
+
+#botoes-fundo {
+    background-color: whitesmoke;
+}
+
+body {
+    background-image: url(../../imagens-crud/backgroud.jpg);
+}

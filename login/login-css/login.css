@@ -1,3 +1,12 @@
 #formulario{
     height: 100vh;
 }
+
+body {
+    background-image: url(../../imagens-crud/backgroud.jpg);
+
+}
+
+#form{
+    background-color: whitesmoke;
+}
