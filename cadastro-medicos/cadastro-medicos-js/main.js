@@ -16,8 +16,8 @@ const tempClient = {
     consulta: "Pediatria"
 }
 
-const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [];
-const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient));
+const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_medic')) ?? [];
+const setLocalStorage = (dbClient) => localStorage.setItem("db_medic", JSON.stringify(dbClient));
 
 //CRUD - create read update delete
 

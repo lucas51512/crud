@@ -15,8 +15,8 @@ const tempClient = {
     cidade: "Assis"
 }
 
-const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [];
-const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient));
+const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_pacient')) ?? [];
+const setLocalStorage = (dbClient) => localStorage.setItem("db_pacient", JSON.stringify(dbClient));
 
 //CRUD - create read update delete
 
