@@ -9,14 +9,13 @@ const closeModal = () => {
 }
 
 const tempClient = {
-    nome: "Nicolas",
-    email: "Nicolas@gmail.com",
-    celular: "18996258875",
-    cidade: "Assis"
+    nome: "Dipirona",
+    descricao: "Dor de cabeça",
+    quantidade: "55",
 }
 
-const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_pacient')) ?? [];
-const setLocalStorage = (dbClient) => localStorage.setItem("db_pacient", JSON.stringify(dbClient));
+const getLocalStrorage = () => JSON.parse(localStorage.getItem('db_medicine')) ?? [];
+const setLocalStorage = (dbClient) => localStorage.setItem("db_medicine", JSON.stringify(dbClient));
 
 //CRUD - create read update delete
 
@@ -58,12 +57,11 @@ const clearFields = () => {
 const saveClient = () => {
     if(isValidFields()){
         const client = {
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            celular: document.getElementById('celular').value,
-            cidade: document.getElementById('cidade').value
+            nome: document.getElementById('nome-remedio').value,
+            descricao: document.getElementById('descricao-remedio').value,
+            quantidade: document.getElementById('quantidade-remedio').value,
         }
-        const index = document.getElementById('nome').dataset.index;
+        const index = document.getElementById('nome-remedio').dataset.index;
         if (index == 'new') {
             createClient(client);
             clearFields();
@@ -81,9 +79,8 @@ const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.nome}</td>
-        <td>${client.email}</td>
-        <td>${client.celular}</td>
-        <td>${client.cidade}</td>
+        <td>${client.descricao}</td>
+        <td>${client.quantidade}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
             <button type="button" class="button red" id="delete-${index}" >Excluir</button>
@@ -104,11 +101,10 @@ const updateTable = () => {
 }
 
 const fillFields = (client) => {
-    document.getElementById('nome').value = client.nome;
-    document.getElementById('email').value = client.email;
-    document.getElementById('celular').value = client.celular;
-    document.getElementById('cidade').value = client.cidade;
-    document.getElementById('nome').dataset.index = client.index;
+    document.getElementById('nome-remedio').value = client.nome;
+    document.getElementById('descricao-remedio').value = client.descricao;
+    document.getElementById('quantidade-remedio').value = client.quantidade;
+    document.getElementById('nome-remedio').dataset.index = client.index;
 }
 
 const editClient = (index) => {
@@ -127,7 +123,7 @@ const editDelete = (event) => {
             editClient(index)
         } else {
             const client = readClient()[index];
-            const response = confirm (`Deseja realmente excluir o paciente ${client.nome}?`)
+            const response = confirm (`Deseja realmente excluir o remédio ${client.nome}?`)
             if (response) {
                 deleteClient(index);
                 updateTable();
